@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Interativo de Cursos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="topo">
+        <div class="container">
+            <p class="identificacao">IFPB · Linguagens de Script para a Web</p>
+            <h1 id="titulo-principal">Painel Interativo de Cursos</h1>
+            <p id="subtitulo" class="subtitulo">Conheça os cursos disponíveis e organize seus estudos.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- DESAFIO 1: Painel de filtros com busca e filtro por área -->
+        <section class="painel-filtros">
+            <div class="campo">
+                <label for="campo-busca">Buscar curso</label>
+                <input id="campo-busca" type="search" placeholder="Digite o nome do curso...">
+            </div>
+            <div class="campo">
+                <label for="filtro-area">Filtrar por área</label>
+                <select id="filtro-area">
+                    <option value="todas">Todas as áreas</option>
+                    <option value="programacao">Programação</option>
+                    <option value="infraestrutura">Infraestrutura</option>
+                    <option value="design">Design</option>
+                </select>
+            </div>
+            <button id="btn-limpar" class="botao botao-secundario" type="button">Limpar filtros</button>
+        </section>
+
+        <div id="mensagem" class="mensagem info" role="status" aria-live="polite">
+            Explore os cursos disponíveis.
+        </div>
+
+        <section class="secao-cursos">
+            <div class="titulo-secao">
+                <div>
+                    <h2>Cursos disponíveis</h2>
+                    <p id="contador-cursos">3 cursos encontrados</p>
+                </div>
+                <button id="btn-tema" class="botao botao-secundario" type="button">Alterar destaque</button>
+            </div>
+            <div id="lista-cursos" class="grade-cursos">
+                <!-- DESAFIO 2: Cards iniciais com h2, descrição, detalhes, botões -->
+                <article class="card-curso" data-area="programacao">
+                    <h2>JavaScript para Web</h2>
+                    <p class="descricao">Aprenda a criar páginas interativas para a web.</p>
+                    <p class="detalhes oculto">Variáveis, funções, DOM e eventos.</p>
+                    <button class="botao botao-principal" data-acao="detalhes" type="button">Ver detalhes</button>
+                    <button class="botao botao-perigo" data-acao="remover" type="button">Remover</button>
+                </article>
+                <article class="card-curso" data-area="infraestrutura">
+                    <h2>Montagem e Manutenção</h2>
+                    <p class="descricao">Conceitos de montagem e manutenção de computadores.</p>
+                    <p class="detalhes oculto">Componentes, diagnóstico e reparo de hardware.</p>
+                    <button class="botao botao-principal" data-acao="detalhes" type="button">Ver detalhes</button>
+                    <button class="botao botao-perigo" data-acao="remover" type="button">Remover</button>
+                </article>
+                <article class="card-curso" data-area="design">
+                    <h2>Design de Interfaces</h2>
+                    <p class="descricao">Aprenda princípios visuais para criar boas interfaces.</p>
+                    <p class="detalhes oculto">Hierarquia visual, cores e prototipação.</p>
+                    <button class="botao botao-principal" data-acao="detalhes" type="button">Ver detalhes</button>
+                    <button class="botao botao-perigo" data-acao="remover" type="button">Remover</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- DESAFIO 3: Formulário de cadastro (nome e área) -->
+        <section class="secao-formulario">
+            <h2>Cadastrar novo curso</h2>
+            <p>Preencha os campos para adicionar um curso à lista.</p>
+            <form id="form-cadastro">
+                <div class="form-grade">
+                    <div class="campo">
+                        <label for="nome-curso">Nome do curso</label>
+                        <input id="nome-curso" name="nome" type="text" placeholder="Ex.: Python" required>
+                    </div>
+                    <div class="campo">
+                        <label for="area-curso">Área</label>
+                        <select id="area-curso" name="area" required>
+                            <option value="">Selecione uma área</option>
+                            <option value="programacao">Programação</option>
+                            <option value="infraestrutura">Infraestrutura</option>
+                            <option value="design">Design</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="botao botao-principal" type="submit">Cadastrar curso</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">Painel Interativo de Cursos · HTML, CSS e JavaScript</div>
+    </footer>
+</body>
+</html>
